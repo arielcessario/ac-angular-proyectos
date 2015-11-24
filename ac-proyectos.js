@@ -4,6 +4,12 @@
     var scripts = document.getElementsByTagName("script");
     var currentScriptPath = scripts[scripts.length - 1].src;
 
+
+
+    if(currentScriptPath.length == 0){
+        currentScriptPath = window.installPath + '/ac-angular-proyectos/includes/ac-proyectos.php';
+    }
+
     angular.module('acProyectos', [])
         .factory('ProyectService', ProyectService)
         .service('ProyectVars', ProyectVars)
