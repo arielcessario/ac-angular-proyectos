@@ -1,8 +1,7 @@
-
 # PROYECTOS
 CREATE TABLE proyectos (
   proyecto_id int(11) NOT NULL AUTO_INCREMENT,
-  usuario_id int(11) NOT NULL DEFAULT NULL,
+  usuario_id int(11) NOT NULL DEFAULT 0,
   nombre varchar(45) DEFAULT NULL,
   descripcion varchar(2000) DEFAULT NULL,
   costo_inicial DECIMAL(8,2) DEFAULT 0.0,
@@ -16,7 +15,7 @@ CREATE TABLE proyectos (
 # CAMBIOS EN PROYECTOS - Tabla intermedia para manejar los cambios
 CREATE TABLE proyectos_cambios (
   proyecto_cambio_id int(11) NOT NULL AUTO_INCREMENT COMMENT '',
-  proyecto_id int(11) NOT NULL DEFAULT NULL,
+  proyecto_id int(11) NOT NULL DEFAULT 0,
   nombre varchar(45) DEFAULT NULL,
   descripcion varchar(2000) DEFAULT NULL,
   costo_inicial DECIMAL(8,2) DEFAULT 0.0,
@@ -57,7 +56,7 @@ CREATE TABLE proyectos_fotos (
 CREATE TABLE donaciones (
   donacion_id int(11) NOT NULL AUTO_INCREMENT,
   proyecto_id int(11) DEFAULT NULL,
-  donador_id int(11) NOT NULL DEFAULT NULL,
+  donador_id int(11) NOT NULL DEFAULT 0,
   fecha timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   valor DECIMAL(8,2) DEFAULT 0.0,
   status int(11) NOT NULL COMMENT '0 - Iniciado, 1 - Pedido, 2 - Confirmado, 3 - Entregado, 4 - Cancelado',
